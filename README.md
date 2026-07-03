@@ -2,9 +2,15 @@
 
 Marketing site for **Total Concepts Advertising** (Greater Fort Wayne). Static, single-page, self-contained HTML. Built and managed by Creative Tone Media.
 
-- **Live domain:** https://totalconcepts.co (owned by Total Concepts, in their GoDaddy)
-- **Hosting:** Vercel (Creative Tone Media account, managed service) — auto-deploys on push to `main`
+- **Live now:** https://tonybott13.github.io/total-concepts-site/ (GitHub Pages)
+- **Target domain:** https://totalconcepts.co (owned by Total Concepts, in their GoDaddy — attach when ready)
+- **Hosting:** GitHub Pages, source = `main` branch root. Auto-rebuilds on push to `main`.
 - **Stack:** Plain HTML/CSS/JS, no build step. Google Fonts is the only external dependency.
+
+## Attaching the custom domain (totalconcepts.co)
+1. In **her GoDaddy** DNS, add four A records for `@` → `185.199.108.153`, `185.199.109.153`,
+   `185.199.110.153`, `185.199.111.153` (GitHub Pages IPs).
+2. Set the repo's Pages custom domain to `totalconcepts.co` (writes a `CNAME` file), then enable HTTPS.
 
 ## Files
 | File | Purpose |
