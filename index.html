@@ -69,13 +69,7 @@
   .stat .slbl{font-size:.82rem;color:var(--muted);margin-top:2px;line-height:1.25}
   .stat-div{width:1px;align-self:stretch;background:var(--line)}
   .hero-media{position:relative}
-  .hero-media .frame{position:relative;width:100%;height:clamp(360px,52vw,500px);border-radius:26px;overflow:hidden;background:rgba(0,0,0,.05);box-shadow:var(--shadow)}
-  .hero-media .frame img{width:100%;height:100%;object-fit:cover}
-  .badge-onair{position:absolute;top:-16px;right:-6px;background:var(--lime);color:var(--ink);font-family:var(--head);font-weight:800;
-    font-size:.9rem;letter-spacing:.03em;padding:.7rem 1rem;border-radius:999px;box-shadow:var(--shadow);animation:float 4s ease-in-out infinite}
-  .pill-tags{position:absolute;bottom:-14px;left:-10px;background:#fff;color:var(--purple);font-weight:700;font-size:.82rem;
-    padding:.7rem 1rem;border-radius:14px;box-shadow:var(--shadow)}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .hero-graphic{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 34px rgba(45,20,70,.16))}
 
   /* SECTION scaffolding */
   section{padding:76px 0}
@@ -88,14 +82,15 @@
   /* OFFER */
   .offer-band{padding:24px 0 0}
   .offer{background:linear-gradient(135deg,var(--purple-deep) 0%,var(--purple-deep2) 100%);color:#fff;border-radius:26px;
-    padding:44px;display:grid;grid-template-columns:1.5fr auto;gap:28px;align-items:center;box-shadow:var(--shadow)}
+    padding:44px;display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center;box-shadow:var(--shadow)}
   .offer .tag{display:inline-block;background:var(--lime);color:var(--ink);font-family:var(--head);font-weight:800;
     font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;padding:.42rem .85rem;border-radius:999px}
   .offer h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;margin:16px 0 12px;max-width:22ch}
   .offer p{color:#E7DCF0;max-width:58ch}
   .offer .value{display:inline-block;margin-top:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
     padding:.5rem .9rem;border-radius:999px;font-weight:700;font-size:.9rem}
-  .offer-cta{display:flex;justify-content:flex-end}
+  .offer-cta{margin-top:22px}
+  .offer-media img{width:100%;height:100%;min-height:250px;max-height:400px;object-fit:cover;border-radius:18px;display:block;box-shadow:0 16px 30px -14px rgba(0,0,0,.5)}
 
   /* CARDS grid */
   .grid{display:grid;gap:20px;margin-top:44px}
@@ -191,8 +186,7 @@
     .offer-cta{justify-content:flex-start}
     .contact-grid{grid-template-columns:1fr}
     .hero-grid{grid-template-columns:1fr;gap:36px}
-    .hero-media{order:2;max-width:460px}
-    .hero-media .frame{height:clamp(320px,80vw,440px)}
+    .hero-media{order:2;max-width:440px;margin-inline:auto}
     .burger{display:flex;position:relative;z-index:110}
     .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
@@ -254,9 +248,7 @@
       </div>
     </div>
     <div class="hero-media">
-      <div class="frame"><img src="assets/hero.webp" alt="Total Concepts on location for a client shoot"></div>
-      <span class="badge-onair">★ ON AIR</span>
-      <span class="pill-tags">Radio · TV · Print · Social</span>
+      <img class="hero-graphic" src="assets/hero.webp" width="1080" height="1080" alt="Total Concepts advertising across radio, TV, print, and social">
     </div>
   </div>
 </section>
@@ -264,13 +256,14 @@
 <!-- OFFER -->
 <div class="offer-band"><div class="wrap">
   <div class="offer">
-    <div>
+    <div class="offer-copy">
       <span class="tag">New Client Offer</span>
       <h2>Sign On and Get 6 Months of TV Commercial Production, Free.</h2>
       <p>When you start with Total Concepts, we write, shoot, and produce your TV commercial at no extra cost for your first 6 months. You get a broadcast-ready spot to run across TV and streaming, included.</p>
       <span class="value">A $5,000+ value, included</span>
+      <div class="offer-cta"><a href="#contact" class="btn btn-lime">Claim Your Free Production</a></div>
     </div>
-    <div class="offer-cta"><a href="#contact" class="btn btn-lime">Claim Your Free Production</a></div>
+    <div class="offer-media"><img src="assets/offer.webp" width="1200" height="1500" alt="Creative Tone Media filming a client's TV commercial"></div>
   </div>
 </div></div>
 
