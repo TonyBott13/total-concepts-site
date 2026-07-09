@@ -426,13 +426,13 @@
         <a href="tel:+12604383395" class="btn btn-dark" style="margin-top:18px;width:100%">Call Now</a>
       </div>
       <div class="contact-card">
-        <!-- Emails via Web3Forms. Lead -> info@creativetonemedia.com, cc Tracy + Kelly. Paste a free key from web3forms.com. -->
-        <form id="consultForm" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="32fe8489-a38d-46e2-846d-62b7a5f217d8">
-          <input type="hidden" name="subject" value="New consult request — Total Concepts website">
-          <input type="hidden" name="from_name" value="Total Concepts Website">
-          <input type="hidden" name="cc" value="totalconceptstracy@gmail.com,conceptskelly@comcast.net">
-          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important">
+        <!-- Emails via FormSubmit.co (free). Leads -> Tracy (primary) + Kelly (cc). Tony's inbox is NOT copied. Tracy must click the one-time activation email on first submit. -->
+        <form id="consultForm" action="https://formsubmit.co/totalconceptstracy@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New consult request — Total Concepts website">
+          <input type="hidden" name="_cc" value="conceptskelly@comcast.net">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none !important">
           <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
           <div class="row2">
             <div class="field"><label for="biz">Business</label><input id="biz" name="business"></div>
@@ -478,7 +478,7 @@
       document.getElementById('tab-' + b.getAttribute('data-tab')).classList.add('active');
     });
   });
-  // Contact form (Web3Forms)
+  // Contact form (FormSubmit.co — leads go to Tracy + Kelly, not Tony)
   var cf = document.getElementById('consultForm'), st = document.getElementById('formStatus');
   function thankYou(){
     var card = cf.closest('.contact-card');
@@ -492,9 +492,9 @@
   if (cf) cf.addEventListener('submit', function(e){
     e.preventDefault();
     st.style.display = 'block'; st.style.color = 'var(--muted)'; st.textContent = 'Sending…';
-    fetch('https://api.web3forms.com/submit', { method:'POST', body:new FormData(cf), headers:{'Accept':'application/json'} })
+    fetch('https://formsubmit.co/ajax/totalconceptstracy@gmail.com', { method:'POST', body:new FormData(cf), headers:{'Accept':'application/json'} })
       .then(function(r){ return r.json(); })
-      .then(function(res){ if (res.success){ thankYou(); } else { st.style.color='#b91c1c'; st.textContent='Something went wrong — please call Tracy at (260) 438-3395.'; } })
+      .then(function(res){ if (res.success === true || res.success === 'true'){ thankYou(); } else { st.style.color='#b91c1c'; st.textContent='Something went wrong — please call Tracy at (260) 438-3395.'; } })
       .catch(function(){ st.style.color='#b91c1c'; st.textContent='Something went wrong — please call Tracy at (260) 438-3395.'; });
   });
 </script>
